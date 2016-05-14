@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Matlab";
+    Layout = "~/Views/Shared/_LayoutAuth.cshtml";
+}
+
+<h2>{{ caption }}</h2>
+
+<div>{{ error }}</div>
+
+<form name="calculateExpression" ng-submit="calculate(operand_1, operand_2, operation)">
+    <div class="sd_wraper">
+        <div class="sd_top">
+            <input type="text" required ng-model="operand_1" />
+            <select ng-model="operation">
+                <option ng-repeat="oper in opers" value="{{ oper }}">{{ oper }}</option>
+            </select>
+            <input type="text" required ng-model="operand_2" />
+        </div>
+        <div class="sd_body">
+            <input type="submit" value="Calculate">
+            <input type="text" ng-model="result" />
+        </div>
+    </div>
+</form>
